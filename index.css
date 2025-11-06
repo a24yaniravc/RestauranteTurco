@@ -13,6 +13,22 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+    /* ocupa el espacio restante entre header y footer */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    /* fuerza que siempre esté abajo */
+    background-color: #482420;
+    color: white;
+    border-top: white 3px solid;
+    padding: 40px 20px;
+}
+
 .brown_border {
     width: 100%;
     display: flex;
@@ -55,7 +71,7 @@ body {
    HEADER Y NAVEGACIÓN
    =============================== */
 .spacer {
-    height: 130px;
+    height: 180px;
     /* altura igual a la del header */
     background-color: #482420;
     transition: all 0.4s ease;
@@ -324,7 +340,8 @@ header.scrolled .logo {
     /* elimina estilos por defecto */
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('img/dropdown-arrow.png'); /* agrega una flecha personalizada */
+    background-image: url('img/dropdown-arrow.png');
+    /* agrega una flecha personalizada */
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 25px;
@@ -341,6 +358,7 @@ header.scrolled .logo {
     font-weight: bold;
     border: none;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 .come_visit_us form>div {
@@ -352,6 +370,166 @@ header.scrolled .logo {
 .come_visit_us form>div>input {
     width: 50%;
 }
+
+
+/* ===============================
+   SECCIÓN DE FOOTER
+   =============================== */
+/* Footer principal */
+footer {
+    display: flex;
+    justify-content: center; /* distribuye secciones */
+    align-items: flex-start; /* alinea verticalmente al inicio */
+    background-color: #482420;
+    color: white;
+    padding: 50px 0; /* padding superior e inferior */
+    box-sizing: border-box;
+    gap: 0;
+}
+
+/* Secciones con ancho relativo */
+footer .info_footer,
+footer .contact {
+    flex: 0 0 25%; /* 25% cada una */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+footer .info_footer {
+    padding-right: 0px;
+    padding-left: 5%;
+}
+
+footer .contact {
+    padding-right: 5%;
+    padding-left: 0px;
+}
+
+/* Info footer */
+.info_footer h3, .info_footer p {
+    margin: 0;
+    margin-top: 20px;
+}
+
+/* Galería */
+.galeria {
+    flex: 0 0 40%; /* galería 40% */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    width: 100%;
+}
+
+.galeria img {
+    margin-top: 20px;
+    width: 90%;
+    height: auto;
+    display: block;
+}
+
+/* Textos y títulos */
+footer p {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Footer social icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a img {
+    background-color: white;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+/* Contacto */ 
+
+.contact h3 {
+    margin:0;
+    margin-top: 20px;
+}
+
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets / pantallas medianas */
+@media (max-width: 1024px) {
+    footer .left,
+    footer .right,
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .left,
+    footer .right,
+    footer .galeria-section {
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr; /* 1 columna */
+        gap: 15px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+    footer p {
+        font-size: 1.1em;
+    }
+
+    footer h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-social a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 
 
 /* ===============================
@@ -385,8 +563,9 @@ header.scrolled .logo {
     position: absolute;
     inset: 0;
     /* cubre toda el área */
-    background: rgba(0, 0, 0, 0.4);
-    /* sombra negra semitransparente */
+    background: #2A1E07;
+    opacity: 0.60;
+    /* sombra marrón semitransparente */
     z-index: 1;
     /* encima de las imágenes */
 }
@@ -399,8 +578,8 @@ header.scrolled .logo {
     /* centra perfectamente */
     z-index: 2;
     /* encima de la sombra e imágenes */
-    color: white;
     text-align: center;
+    color: white;
     padding: 1rem 0rem;
     width: 90%;
     max-width: 80%;

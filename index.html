@@ -110,10 +110,10 @@
             <h1>Come visit us</h1>
             <form action="#" method="post" class="visit_form">
                 <div class="form_nombre">
-                    <input type="text" name="name" placeholder="Name*" required>
-                    <input type="text" name="surname" placeholder="Surname*" required>
+                    <input type="text" name="name" placeholder="Name*" required />
+                    <input type="text" name="surname" placeholder="Surname*" required />
                 </div>
-                <input type="email" name="email" placeholder="Contact email*" required>
+                <input type="email" name="email" placeholder="Contact email*" required />
                 <select name="people" required>
                     <option value="" disabled selected>People*</option>
                     <option value="1">1</option>
@@ -128,22 +128,58 @@
                     <option value="10+">10+</option>
                 </select>
                 <div class="datetime_inputs">
-                    <input type="date" id="start" name="reservDate" value="2026-07-22" min="2025-01-01" max="2026-12-31" />
-                    <input type="time" id="appt" name="reservTime" value="19:00" min="12:00" max="23:00" required>
+                    <input type="date" id="start" name="reservDate" value="2026-07-22" min="2025-01-01" max="2026-12-31"
+                        required />
+                    <input type="time" id="appt" name="reservTime" value="19:00" min="12:00" max="23:00" required />
                 </div>
                 <button type="submit" class="submit_btn">SUBMIT FORM</button>
+            </form>
+        </section>
     </main>
 
     <footer>
         <section class="info_footer">
             <div class="footer_logo">
-                <img src="img/logo.svg" alt="TOPKAPI TAZELIK Logo" width="150">
+                <img src="img/logo.svg" alt="TOPKAPI TAZELIK Logo" width="200">
             </div>
             <div class="footer_text">
                 <p>The authentic turkish food you've been dying to try</p>
                 <h3>SOCIAL MEDIA</h3>
-                
+                <!-- Footer Social Media Icons -->
+                <div class="footer-social">
+                    <a href="https://www.tiktok.com/@restaurant" target="_blank" aria-label="TikTok">
+                        <img src="img/tiktok.svg" alt="TikTok Icon">
+                    </a>
+                    <a href="https://www.instagram.com/restaurant" target="_blank" aria-label="Instagram">
+                        <img src="img/insta.svg" alt="Instagram Icon">
+                    </a>
+                    <a href="https://www.youtube.com/@restaurant" target="_blank" aria-label="YouTube">
+                        <img src="img/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </div>
             </div>
+        </section>
+        <section class="galeria">
+            <img src="img/galeria1.png" alt="Galeria Image 1" class="galeria_img">
+            <img src="img/galeria2.png" alt="Galeria Image 2" class="galeria_img">
+            <img src="img/galeria3.png" alt="Galeria Image 3" class="galeria_img">
+            <img src="img/galeria4.png" alt="Galeria Image 4" class="galeria_img">
+        </section>
+        <section class="contact">
+            <div class="adress">
+                <h3>ADDRESS</h3>
+                <p>Rúa das Estrelas, 27<br>
+                    15704 Santiago de Compostela, A Coruña <br>
+                    Galicia, Spain</p>
+            </div>
+            <div class="opening-hours">
+                <h3>OPENING HOURS</h3>
+                <p>Every Day 12:00 - 23:30</p>
+            </div>
+            <div class="contact-info">
+                <h3>CONTACT INFO</h3>
+                <p>+90 212 520 77 78</p>
+                <p>info@topkapitazelikrestaurant.com</p>
         </section>
     </footer>
 </body>
