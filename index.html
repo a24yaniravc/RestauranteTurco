@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPKAPI TAZELIK</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Enlace a la fuente SeoulNamsan CB -->
+    <link href="https://db.onlinewebfonts.com/c/17aaca9191ed0f150a1a984d39f3bd8a?family=SeoulNamsan+CB"
+        rel="stylesheet">
+    <!-- Enlace a la fuente Teachers -->
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo JavaScript para el carrusel -->
+    <script src="carousel.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <!-- Navegador de la página -->
+    <header class="main-header" id="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <img src="img/logo.svg" alt="TOPKAPI TAZELIK Logo" class="logo" width="200">
+                <li><a href="products.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="spacer">
+            <!-- Espaciador para el header fijo -->
+        </section>
+        <section class="brown_border">
+            <div class="brown_line"></div>
+        </section>
+        <!-- Carrusel de imágenes -->
+        <section class="carousel" id="carousel" aria-roledescription="carousel">
+            <div class="track" id="track">
+                <div class="slide" aria-label="Slide 1">
+                    <img src="img/falafel.svg" alt="Falafel" />
+                </div>
+                <div class="slide" aria-label="Slide 2">
+                    <img src="img/lambKebab.svg" alt="Lamb Kebab" />
+                </div>
+                <div class="slide" aria-label="Slide 3">
+                    <img src="img/baklava.png" alt="Chicken Kebab" />
+                </div>
+            </div>
+
+            <button class="btn btn-left" id="prev" aria-label="Anterior">&lt;</button>
+            <button class="btn btn-right" id="next" aria-label="Siguiente">&gt;</button>
+
+            <div class="dots" id="dots"></div>
+            <!-- Texto superpuesto -->
+            <div class="carousel-text">
+                <h1>WELCOME TO TOPKAPI TAZELIK</h1>
+                <button class="explore-btn">BOOK YOUR TABLE NOW</button>
+            </div>
+        </section>
+        <section class="brown_border">
+            <div class="brown_line"></div>
+        </section>
+        <section class="halal_info">
+            <div class="gray_line">
+                <h1>Halal Authentic Anatolian Cuisine in Santiago
+                </h1>
+            </div>
+        </section>
+        <!-- Discover Our Story -->
+        <section class="discover_story">
+            <div class="story_text">
+                <h2>Welcome to Topkapi Tazelik</h2>
+                <p>In the heart of Santiago, Topkapi Tazelik brings the flavors of Turkey to your table. Inspired by the
+                    historic kitchens of the Topkapi Palace, our menu celebrates fresh ingredients, rich spices, and
+                    timeless recipes. From sizzling kebabs to house-made baklava, every dish is crafted to honor
+                    tradition while delighting modern tastes. Step inside and experience the warmth, aroma, and spirit
+                    of Istanbul in every bite.</p>
+            </div>
+            <div class="story_image">
+                <img src="img/discover_our_story.svg" alt="Discover Our Story Image">
+            </div>
+            <div class="buttons_story">
+                <button class="btn_story">ABOUT US</button>
+                <button class="btn_menu">EXPLORE MENU</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

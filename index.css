@@ -1,0 +1,296 @@
+/* ===============================
+   RESET Y ESTILOS BÁSICOS
+   =============================== */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SeoulNamsan CB", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.brown_border {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.brown_line {
+    width: 100%;
+    height: 30px;
+    background-color: #2E1C00;
+}
+
+.halal_info {
+    width: 100%;
+    background-color: #999999;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.gray_line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Teachers", sans-serif;
+    align-items: center;
+    color: white;
+    font-size: 3.5em;
+}
+
+/* ===============================
+   HEADER Y NAVEGACIÓN
+   =============================== */
+.spacer {
+    height: 130px; /* altura igual a la del header */
+    background-color: #482420;
+    transition: all 0.4s ease;
+}
+
+header {
+    background-color: #482420;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    /* se fija arriba al hacer scroll */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    /* animación suave */
+}
+
+header.scrolled {
+    padding: 5px 0;
+    /* menos alto */
+    background-color: #331814;
+    /* más oscuro */
+}
+
+nav>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 7%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s ease;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
+}
+
+header.scrolled nav>ul>li>a {
+    font-size: 1.4em;
+    /* texto más pequeño al hacer scroll */
+}
+
+/* Logo */
+.logo {
+    width: 200px;
+    transition: all 0.4s ease;
+}
+
+header.scrolled .logo {
+    width: 130px;
+    /* se encoge al hacer scroll */
+}
+
+/* =============================== 
+    WELCOME TO TOPKAPI TAZELIK
+    ===============================
+*/
+
+.discover_story {
+    padding: 20px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #181A1B;
+    border: none;
+}
+
+
+/* ===============================
+   SECCIÓN DE SLIDER / CAROUSEL
+   =============================== */
+.image_slider_content {
+    color: #FFFFFF;
+}
+
+/* Variables */
+:root {
+    --w: 800px;
+    --h: 450px;
+}
+
+/* Carousel container */
+.carousel {
+    width: 100%;
+    /* ocupa todo el ancho de la ventana */
+    height: 100vh;
+    /* o la altura que prefieras */
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.carousel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* cubre toda el área */
+    background: rgba(0, 0, 0, 0.4);
+    /* sombra negra semitransparente */
+    z-index: 1;
+    /* encima de las imágenes */
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* centra perfectamente */
+    z-index: 2;
+    /* encima de la sombra e imágenes */
+    color: white;
+    text-align: center;
+    padding: 1rem 0rem;
+    width: 90%;
+    max-width: 80%;
+}
+
+.carousel-text h1 {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+}
+
+.explore-btn {
+    margin-top: 20px;
+    padding: 20px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* Slides track */
+.track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(.22, .9, .35, 1);
+    z-index: 0;
+}
+
+/* Slide individual */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    /* evita bordes blancos si hay espacio */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* llena el contenedor sin deformarse */
+    display: block;
+}
+
+.btn,
+.dots {
+    z-index: 2;
+    position: relative;
+}
+
+/* Flechas */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 16px;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn-left {
+    left: 20px;
+}
+
+.btn-right {
+    right: 20px;
+}
+
+/* Dots (indicadores) */
+.dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 0;
+    cursor: pointer;
+}
+
+.dot.active {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    :root {
+        --h: 260px;
+    }
+
+    nav>ul>li>a {
+        font-size: 1.4em;
+    }
+}
