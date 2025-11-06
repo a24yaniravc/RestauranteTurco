@@ -43,7 +43,8 @@ body {
     width: 100%;
     font-family: "Teachers", sans-serif;
     color: white;
-    font-size: calc(2vw + 10px); /* escala según ancho de pantalla */
+    font-size: calc(2vw + 10px);
+    /* escala según ancho de pantalla */
     padding: 0 5px;
     text-align: center;
     box-sizing: border-box;
@@ -54,70 +55,92 @@ body {
    HEADER Y NAVEGACIÓN
    =============================== */
 .spacer {
-    height: 130px; /* altura igual a la del header */
+    height: 130px;
+    /* altura igual a la del header */
     background-color: #482420;
     transition: all 0.4s ease;
 }
 
 header {
-  background-color: #482420;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.4s ease;
+    background-color: #482420;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
 }
 
 header.scrolled {
-  padding: 5px 0;
-  background-color: #331814;
+    padding: 5px 0;
+    background-color: #331814;
 }
 
-nav > ul {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto; /* Asegura centrado */
-  gap: 60px; /* espacio entre elementos */
-  width: fit-content; /* Ajusta el bloque al contenido */
-  transition: all 0.4s ease;
+nav>ul {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    /* Asegura centrado */
+    gap: 60px;
+    /* espacio entre elementos */
+    width: fit-content;
+    /* Ajusta el bloque al contenido */
+    transition: all 0.4s ease;
 }
 
 
-nav > ul > li:first-child a {
-    border-bottom: 4px solid #D6A85E; /* línea dorada */
-    padding-bottom: 5px; /* espacio entre texto y línea */
+nav>ul>li a {
+    position: relative;
+    padding-bottom: 5px;
+    /* espacio para la línea */
+    display: inline-block;
+    box-sizing: border-box;
+    /* incluye padding en el cálculo de altura */
+}
+
+nav>ul>li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    /* grosor de la línea */
+    background-color: #D6A85E;
 }
 
 
-nav > ul > li {
-  display: flex;
-  align-items: center;
+
+nav>ul>li {
+    display: flex;
+    align-items: center;
 }
 
-nav > ul > li > a {
-  text-decoration: none;
-  color: white;
-  font-size: 2em;
-  transition: all 0.3s ease;
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
 }
 
-header.scrolled nav > ul > li > a {
-  font-size: 1.4em;
+header.scrolled nav>ul>li>a {
+    font-size: 1.4em;
 }
 
 .logo {
-  width: 200px;
-  height: auto;
-  transition: all 0.4s ease;
+    width: 200px;
+    height: auto;
+    transition: all 0.4s ease;
 }
 
 
 header.scrolled .logo {
-  width: 130px;
+    width: 130px;
 }
 
 
@@ -136,7 +159,7 @@ header.scrolled .logo {
     padding: 50px 50px;
 }
 
-.discover_story > h1 {
+.discover_story>h1 {
     text-align: center;
     color: #D6A85E;
     font-size: 3em;
@@ -151,17 +174,23 @@ header.scrolled .logo {
     gap: 40px;
 }
 
-.story_content > div {
-    width: 50%;             /* cada hijo ocupa la mitad */
-    box-sizing: border-box; /* incluye padding en el 50% */
+.story_content>div {
+    width: 50%;
+    /* cada hijo ocupa la mitad */
+    box-sizing: border-box;
+    /* incluye padding en el 50% */
 }
 
 
-.story_content > div img {
-    width: 100%;       /* ocupa todo el ancho de la columna */
-    height: auto;      /* mantiene proporción */
-    display: block;    /* elimina espacio extra debajo de la imagen */
-    object-fit: cover; /* opcional: recorta proporcionalmente si quieres */
+.story_content>div img {
+    width: 100%;
+    /* ocupa todo el ancho de la columna */
+    height: auto;
+    /* mantiene proporción */
+    display: block;
+    /* elimina espacio extra debajo de la imagen */
+    object-fit: cover;
+    /* opcional: recorta proporcionalmente si quieres */
 }
 
 .text_and_button {
@@ -176,12 +205,12 @@ header.scrolled .logo {
     justify-content: space-around;
 }
 
-.story_text > h2 {
+.story_text>h2 {
     margin: 0;
     font-size: 2.3em;
 }
 
-.story_text > p {
+.story_text>p {
     line-height: 1.6;
     text-align: justify;
     font-size: 1.4em;
@@ -190,11 +219,13 @@ header.scrolled .logo {
 
 @media (max-width: 900px) {
     .story_content {
-        flex-direction: column-reverse; /* apila verticalmente en orden inverso */
+        flex-direction: column-reverse;
+        /* apila verticalmente en orden inverso */
     }
 
-    .story_content > div {
-        width: 100%; /* cada hijo ocupa todo el ancho */
+    .story_content>div {
+        width: 100%;
+        /* cada hijo ocupa todo el ancho */
     }
 }
 
@@ -212,6 +243,114 @@ header.scrolled .logo {
     border: none;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+/* ===============================
+   SECCIÓN DE TESTIMONIALS
+   =============================== */
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1F2223;
+    padding: 40px 20px;
+}
+
+.testimonials>h1 {
+    margin: 0;
+    color: #D6A85E;
+    font-family: "Teachers", sans-serif;
+    font-size: 3em;
+}
+
+.testimonials_img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* =============================
+   SECCIÓN COME VISIT US
+   =============================== */
+
+.come_visit_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #181A1B;
+    padding: 40px 20px;
+}
+
+.come_visit_us>h1 {
+    margin: 0;
+    color: #D6A85E;
+    font-family: "Teachers", sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.come_visit_us form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    width: 65%;
+}
+
+.come_visit_us form>input,
+.come_visit_us form>select,
+.come_visit_us form>div>input {
+    padding: 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #999999;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.come_visit_us form>div>input::placeholder,
+.come_visit_us form>input::placeholder {
+    color: white;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.come_visit_us form>select {
+    appearance: none;
+    /* elimina estilos por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('img/dropdown-arrow.png'); /* agrega una flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 25px;
+    padding-right: 30px;
+    /* espacio para la flecha */
+}
+
+.come_visit_us form>button {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #482420;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.come_visit_us form>div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.come_visit_us form>div>input {
+    width: 50%;
 }
 
 
@@ -232,7 +371,7 @@ header.scrolled .logo {
 .carousel {
     width: 100%;
     /* ocupa todo el ancho de la ventana */
-    height: 50%;
+    height: 30%;
     /* o la altura que prefieras */
     position: relative;
     overflow: hidden;
