@@ -41,13 +41,14 @@ body {
 
 .gray_line {
     width: 100%;
-    display: flex;
-    justify-content: center;
     font-family: "Teachers", sans-serif;
-    align-items: center;
     color: white;
-    font-size: 3.5em;
+    font-size: calc(2vw + 10px); /* escala según ancho de pantalla */
+    padding: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
 }
+
 
 /* ===============================
    HEADER Y NAVEGACIÓN
@@ -59,60 +60,66 @@ body {
 }
 
 header {
-    background-color: #482420;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    /* se fija arriba al hacer scroll */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    /* animación suave */
+  background-color: #482420;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
 }
 
 header.scrolled {
-    padding: 5px 0;
-    /* menos alto */
-    background-color: #331814;
-    /* más oscuro */
+  padding: 5px 0;
+  background-color: #331814;
 }
 
-nav>ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 7%;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    transition: all 0.4s ease;
+nav > ul {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; /* Asegura centrado */
+  gap: 60px; /* espacio entre elementos */
+  width: fit-content; /* Ajusta el bloque al contenido */
+  transition: all 0.4s ease;
 }
 
-nav>ul>li>a {
-    text-decoration: none;
-    color: white;
-    font-size: 2em;
-    transition: all 0.3s ease;
+
+nav > ul > li:first-child a {
+    border-bottom: 4px solid #D6A85E; /* línea dorada */
+    padding-bottom: 5px; /* espacio entre texto y línea */
 }
 
-header.scrolled nav>ul>li>a {
-    font-size: 1.4em;
-    /* texto más pequeño al hacer scroll */
+
+nav > ul > li {
+  display: flex;
+  align-items: center;
 }
 
-/* Logo */
+nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  transition: all 0.3s ease;
+}
+
+header.scrolled nav > ul > li > a {
+  font-size: 1.4em;
+}
+
 .logo {
-    width: 200px;
-    transition: all 0.4s ease;
+  width: 200px;
+  height: auto;
+  transition: all 0.4s ease;
 }
+
 
 header.scrolled .logo {
-    width: 130px;
-    /* se encoge al hacer scroll */
+  width: 130px;
 }
+
 
 /* =============================== 
     WELCOME TO TOPKAPI TAZELIK
@@ -120,11 +127,91 @@ header.scrolled .logo {
 */
 
 .discover_story {
-    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
     font-size: 1.2em;
     color: white;
     background-color: #181A1B;
     border: none;
+    padding: 50px 50px;
+}
+
+.discover_story > h1 {
+    text-align: center;
+    color: #D6A85E;
+    font-size: 3em;
+    font-family: "Teachers", sans-serif;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.story_content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.story_content > div {
+    width: 50%;             /* cada hijo ocupa la mitad */
+    box-sizing: border-box; /* incluye padding en el 50% */
+}
+
+
+.story_content > div img {
+    width: 100%;       /* ocupa todo el ancho de la columna */
+    height: auto;      /* mantiene proporción */
+    display: block;    /* elimina espacio extra debajo de la imagen */
+    object-fit: cover; /* opcional: recorta proporcionalmente si quieres */
+}
+
+.text_and_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.story_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.story_text > h2 {
+    margin: 0;
+    font-size: 2.3em;
+}
+
+.story_text > p {
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 1.4em;
+    font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 900px) {
+    .story_content {
+        flex-direction: column-reverse; /* apila verticalmente en orden inverso */
+    }
+
+    .story_content > div {
+        width: 100%; /* cada hijo ocupa todo el ancho */
+    }
+}
+
+/* Botones */
+.buttons_story {
+    display: flex;
+    justify-content: start;
+    gap: 25px;
+}
+
+.buttons_story>button {
+    padding: 30px;
+    background-color: #482420;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 
@@ -145,7 +232,7 @@ header.scrolled .logo {
 .carousel {
     width: 100%;
     /* ocupa todo el ancho de la ventana */
-    height: 100vh;
+    height: 50%;
     /* o la altura que prefieras */
     position: relative;
     overflow: hidden;
