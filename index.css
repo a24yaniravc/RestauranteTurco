@@ -87,6 +87,22 @@ header {
     transition: all 0.4s ease;
 }
 
+/* Media query para header en pantallas pequeñas */
+@media (max-width: 768px) {
+    .spacer {
+        height: 140px;
+    }
+    header {
+        font-size: 0.7em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .logo {
+        width: 140px;
+        height: auto;
+        }
+    }
+}
+
 header.scrolled {
     padding: 5px 0;
     background-color: #331814;
@@ -480,13 +496,6 @@ footer h3 {
 
 
 /* ===== MEDIA QUERIES ===== */
-
-/* Tablets / pantallas medianas */
-@media (max-width: 1024px) {
-    footer .left,
-    footer .right,
-}
-
 /* Móviles */
 @media (max-width: 768px) {
     footer {
