@@ -90,7 +90,7 @@ header {
 /* Media query para header en pantallas pequeñas */
 @media (max-width: 768px) {
     .spacer {
-        height: 140px;
+        height: 200px;
     }
     header {
         font-size: 0.7em;
@@ -200,17 +200,32 @@ header.scrolled .logo {
     margin-bottom: 50px;
 }
 
+.discover_story img {
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+}
+
 .story_content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
+    padding: 30px 0;
 }
 
-.story_content>div {
-    width: 50%;
+.text_and_button {
+    width: 40%;
     /* cada hijo ocupa la mitad */
     box-sizing: border-box;
     /* incluye padding en el 50% */
+}
+
+.story_image {
+    display: flex;
+    justify-content: center;
+    width: 40%;
 }
 
 
@@ -504,8 +519,8 @@ footer h3 {
         text-align: center;
     }
 
-    footer .left,
-    footer .right,
+    footer .info_footer,
+    footer .contact,
     footer .galeria-section {
         flex: 1 1 100%;
         width: 100%;
@@ -513,9 +528,12 @@ footer h3 {
         padding: 0;
     }
 
+    .contact {
+        padding:0;
+    }
+
     .galeria {
         grid-template-columns: 1fr; /* 1 columna */
-        gap: 15px;
     }
 
     .footer-social {
@@ -583,7 +601,7 @@ footer h3 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -65%);
     /* centra perfectamente */
     z-index: 2;
     /* encima de la sombra e imágenes */
@@ -699,12 +717,21 @@ footer h3 {
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 725px) {
     :root {
         --h: 260px;
     }
 
     nav>ul>li>a {
         font-size: 1.4em;
+    }
+
+    .carousel-text h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-text {
+        transform: translate(-50%, -50%);
     }
 }
