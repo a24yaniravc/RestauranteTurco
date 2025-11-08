@@ -20,6 +20,8 @@
     <script src="carousel.js" defer></script>
     <!-- Enlace al archivo JavaScript para el encabezado -->
     <script src="header.js" defer></script>
+    <!-- Enlace al archivo JavaScript para el formulario -->
+    <script src="form.js" defer></script>
 </head>
 
 <body>
@@ -28,8 +30,8 @@
         <nav>
             <ul>
                 <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><img src="img/logo.svg" alt="TOPKAPI TAZELIK Logo" class="logo" width="200"></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><img src="img/logo/logo.svg" alt="TOPKAPI TAZELIK Logo" class="logo" width="200"></li>
                 <li><a href="products.html">MENU</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
@@ -47,13 +49,19 @@
         <section class="carousel" id="carousel" aria-roledescription="carousel">
             <div class="track" id="track">
                 <div class="slide" aria-label="Slide 1">
-                    <img src="img/falafel.svg" alt="Falafel" />
+                    <img src="img/food/falafel.svg" alt="Falafel" />
                 </div>
                 <div class="slide" aria-label="Slide 2">
-                    <img src="img/lambKebab.svg" alt="Lamb Kebab" />
+                    <img src="img/food/lambKebab.svg" alt="Lamb Kebab" />
                 </div>
                 <div class="slide" aria-label="Slide 3">
-                    <img src="img/baklava.png" alt="Chicken Kebab" />
+                    <img src="img/food/baklava.png" alt="Chicken Kebab" />
+                </div>
+                <div class="slide" aria-label="Slide 4">
+                    <iframe src="https://www.youtube.com/embed/gu2Ju-upT9k?autoplay=1&mute=1&playsinline=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+                    </iframe>
                 </div>
             </div>
 
@@ -64,7 +72,7 @@
             <!-- Texto superpuesto -->
             <div class="carousel-text">
                 <h1>WELCOME TO TOPKAPI TAZELIK</h1>
-                <button class="explore-btn">BOOK YOUR TABLE NOW</button>
+                <button class="explore-btn"><a href="#reservation" class="explore-btn">BOOK YOUR TABLE NOW</a></button>
             </div>
         </section>
         <section class="brown_border">
@@ -95,8 +103,8 @@
                             of Istanbul in every bite.</p>
                     </div>
                     <div class="buttons_story">
-                        <button class="btn_story">ABOUT US</button>
-                        <button class="btn_menu">EXPLORE MENU</button>
+                        <button class="btn_story"><a href="aboutUs.html">ABOUT US</a></button>
+                        <button class="btn_menu"><a href="menu.html">EXPLORE MENU</a></button>
                     </div>
                 </div>
                 <div class="story_image">
@@ -108,9 +116,9 @@
             <h1>Testimonials</h1>
             <img src="img/testimonials.png" alt="Testimonials Image" class="testimonials_img">
         </section>
-        <section class="come_visit_us">
+        <section class="come_visit_us" id="reservation">
             <h1>Come visit us</h1>
-            <form action="#" method="post" class="visit_form">
+            <form method="post" class="visit_form">
                 <div class="form_nombre">
                     <input type="text" name="name" placeholder="Name*" required />
                     <input type="text" name="surname" placeholder="Surname*" required />
@@ -136,53 +144,63 @@
                 </div>
                 <button type="submit" class="submit_btn">SUBMIT FORM</button>
             </form>
+
+            <!-- Mensaje -->
+            <p id="mensaje_enviado"></p>
         </section>
+
     </main>
 
     <footer>
-        <section class="info_footer">
-            <div class="footer_logo">
-                <img src="img/logo.svg" alt="TOPKAPI TAZELIK Logo" width="200">
-            </div>
-            <div class="footer_text">
-                <p>The authentic turkish food you've been dying to try</p>
-                <h3>SOCIAL MEDIA</h3>
-                <!-- Footer Social Media Icons -->
-                <div class="footer-social">
-                    <a href="https://www.tiktok.com/@restaurant" target="_blank" aria-label="TikTok">
-                        <img src="img/tiktok.svg" alt="TikTok Icon">
-                    </a>
-                    <a href="https://www.instagram.com/restaurant" target="_blank" aria-label="Instagram">
-                        <img src="img/insta.svg" alt="Instagram Icon">
-                    </a>
-                    <a href="https://www.youtube.com/@restaurant" target="_blank" aria-label="YouTube">
-                        <img src="img/youtube.svg" alt="YouTube Icon">
-                    </a>
+        <div class="footer_top">
+            <section class="info_footer">
+                <div class="footer_logo">
+                    <img src="img/logo/logo.svg" alt="TOPKAPI TAZELIK Logo" width="200">
                 </div>
-            </div>
-        </section>
-        <section class="galeria">
-            <img src="img/galeria1.png" alt="Galeria Image 1" class="galeria_img">
-            <img src="img/galeria2.png" alt="Galeria Image 2" class="galeria_img">
-            <img src="img/galeria3.png" alt="Galeria Image 3" class="galeria_img">
-            <img src="img/galeria4.png" alt="Galeria Image 4" class="galeria_img">
-        </section>
-        <section class="contact">
-            <div class="adress">
-                <h3>ADDRESS</h3>
-                <p>Rúa das Estrelas, 27<br>
-                    15704 Santiago de Compostela, A Coruña <br>
-                    Galicia, Spain</p>
-            </div>
-            <div class="opening-hours">
-                <h3>OPENING HOURS</h3>
-                <p>Every Day 12:00 - 23:30</p>
-            </div>
-            <div class="contact-info">
-                <h3>CONTACT INFO</h3>
-                <p>+90 212 520 77 78</p>
-                <p>info@topkapitazelikrestaurant.com</p>
-        </section>
+                <div class="footer_text">
+                    <p>The authentic turkish food you've been dying to try</p>
+                    <h3>SOCIAL MEDIA</h3>
+                    <!-- Footer Social Media Icons -->
+                    <div class="footer-social">
+                        <a href="https://www.tiktok.com/@restaurant" target="_blank" aria-label="TikTok">
+                            <img src="img/socials/tiktok.svg" alt="TikTok Icon">
+                        </a>
+                        <a href="https://www.instagram.com/restaurant" target="_blank" aria-label="Instagram">
+                            <img src="img/socials/insta.svg" alt="Instagram Icon">
+                        </a>
+                        <a href="https://www.youtube.com/@restaurant" target="_blank" aria-label="YouTube">
+                            <img src="img/socials/youtube.svg" alt="YouTube Icon">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="galeria">
+                <img src="img/gallery/galeria1.png" alt="Galeria Image 1" class="galeria_img">
+                <img src="img/gallery/galeria2.png" alt="Galeria Image 2" class="galeria_img">
+                <img src="img/gallery/galeria3.png" alt="Galeria Image 3" class="galeria_img">
+                <img src="img/gallery/galeria4.png" alt="Galeria Image 4" class="galeria_img">
+            </section>
+            <section class="contact">
+                <div class="adress">
+                    <h3>ADDRESS</h3>
+                    <p>Rúa das Estrelas, 27<br>
+                        15704 Santiago de Compostela, A Coruña <br>
+                        Galicia, Spain</p>
+                </div>
+                <div class="opening-hours">
+                    <h3>OPENING HOURS</h3>
+                    <p>Every Day 12:00 - 23:30</p>
+                </div>
+                <div class="contact-info">
+                    <h3>CONTACT INFO</h3>
+                    <p>+90 212 520 77 78</p>
+                    <p>info@topkapitazelikrestaurant.com</p>
+            </section>
+        </div>
+        <div class="footer_bottom">
+            <p>&copy; 2024 TOPKAPI TAZELIK. All rights reserved.</p>
+            <p class="credit">Designed by Yanira Vivel Couso</p>
+        </div>
     </footer>
 </body>
 

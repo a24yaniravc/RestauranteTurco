@@ -66,6 +66,21 @@ footer {
     box-sizing: border-box;
 }
 
+.mensaje_enviado {
+    color: white;
+    font-weight: bold;
+    margin-top: 10px
+}
+
+.btn_story a, .btn_menu a {
+    text-decoration: none;
+    color: white;
+}
+
+#reservation {
+    scroll-margin-top: 200px; /* la cantidad de espacio que quieres arriba */
+}
+
 
 /* ===============================
    HEADER Y NAVEGACIÓN
@@ -92,13 +107,15 @@ header {
     .spacer {
         height: 200px;
     }
+
     header {
         font-size: 0.7em;
         padding-top: 15px;
         padding-bottom: 15px;
+
         .logo {
-        width: 140px;
-        height: auto;
+            width: 140px;
+            height: auto;
         }
     }
 }
@@ -174,6 +191,7 @@ header.scrolled nav>ul>li>a {
 header.scrolled .logo {
     width: 130px;
 }
+
 
 
 /* =============================== 
@@ -409,19 +427,55 @@ header.scrolled .logo {
 /* Footer principal */
 footer {
     display: flex;
-    justify-content: center; /* distribuye secciones */
-    align-items: flex-start; /* alinea verticalmente al inicio */
+    justify-content: center;
+    /* distribuye secciones */
+    align-items: flex-start;
+    /* alinea verticalmente al inicio */
+    flex-direction: column;
     background-color: #482420;
     color: white;
-    padding: 50px 0; /* padding superior e inferior */
+    padding: 50px 0;
+    /* padding superior e inferior */
     box-sizing: border-box;
     gap: 0;
+    padding-bottom: 0;
+}
+
+footer .footer_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* espacio entre secciones */
+    align-items: center;
+    /* alinea verticalmente al inicio */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .footer_bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1em;
+    color: #D6A85E;
+    font-family: "Montserrat", sans-serif;
+    background-color: #331814;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .credit {
+    font-size: 0.9em;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
 }
 
 /* Secciones con ancho relativo */
 footer .info_footer,
 footer .contact {
-    flex: 0 0 25%; /* 25% cada una */
+    flex: 0 0 25%;
+    /* 25% cada una */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -435,19 +489,21 @@ footer .info_footer {
 }
 
 footer .contact {
-    padding-right: 5%;
     padding-left: 0px;
+    padding-right: 5%;
 }
 
 /* Info footer */
-.info_footer h3, .info_footer p {
+.info_footer h3,
+.info_footer p {
     margin: 0;
     margin-top: 20px;
 }
 
 /* Galería */
 .galeria {
-    flex: 0 0 40%; /* galería 40% */
+    flex: 0 0 40%;
+    /* galería 40% */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -502,18 +558,17 @@ footer h3 {
     filter: grayscale(0%);
 }
 
-/* Contacto */ 
+/* Contacto */
 
 .contact h3 {
-    margin:0;
+    margin: 0;
     margin-top: 20px;
 }
 
 
 /* ===== MEDIA QUERIES ===== */
-/* Móviles */
-@media (max-width: 768px) {
-    footer {
+@media (max-width: 1100px) {
+    footer .footer_top {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -529,11 +584,12 @@ footer h3 {
     }
 
     .contact {
-        padding:0;
+        padding: 0;
     }
 
     .galeria {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
+        /* 1 columna */
     }
 
     .footer-social {
@@ -541,7 +597,6 @@ footer h3 {
     }
 }
 
-/* Pantallas muy pequeñas */
 @media (max-width: 480px) {
     footer p {
         font-size: 1.1em;
@@ -650,7 +705,8 @@ footer h3 {
     /* evita bordes blancos si hay espacio */
 }
 
-.slide img {
+.slide img,
+iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
