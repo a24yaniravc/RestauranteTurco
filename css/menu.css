@@ -1,0 +1,785 @@
+/* ===============================
+    Elementos básicos y estructura
+   =============================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SeoulNamsan CB", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    /* ocupa el espacio restante entre header y footer */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    /* fuerza que siempre esté abajo */
+    background-color: #482420;
+    color: white;
+    border-top: white 3px solid;
+    padding: 40px 20px;
+}
+
+/* HEADER */
+.spacer {
+    height: 145px;
+    /* altura igual a la del header */
+    background-color: #482420;
+    transition: all 0.4s ease;
+}
+
+header {
+    background-color: #482420;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+/* Media query para header en pantallas pequeñas */
+@media (max-width: 768px) {
+    .spacer {
+        height: 200px;
+    }
+
+    header {
+        font-size: 0.7em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .logo {
+            width: 140px;
+            height: auto;
+        }
+    }
+}
+
+header.scrolled {
+    padding: 5px 0;
+    background-color: #331814;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    /* Asegura centrado */
+    gap: 60px;
+    /* espacio entre elementos */
+    width: fit-content;
+    /* Ajusta el bloque al contenido */
+    transition: all 0.4s ease;
+}
+
+
+nav>ul>li a {
+    position: relative;
+    padding-bottom: 5px;
+    /* espacio para la línea */
+    display: inline-block;
+    box-sizing: border-box;
+    /* incluye padding en el cálculo de altura */
+}
+
+nav>ul>li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    /* grosor de la línea */
+    background-color: #D6A85E;
+}
+
+nav>ul>li {
+    display: flex;
+    align-items: center;
+}
+
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
+}
+
+header.scrolled nav>ul>li>a {
+    font-size: 1.4em;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    transition: all 0.4s ease;
+}
+
+header.scrolled .logo {
+    width: 130px;
+}
+
+/* ==============================
+    Intro al menu
+   ============================== */
+
+.intro_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    background-color: #181A1B;
+}
+
+.intro_menu h1 {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    font-size: 2.3em;
+    color: white;
+    background-color: #151111;
+    margin-bottom: 10px;
+    border: #676060 5px solid;
+    width: fit-content;
+    padding: 20px 90px;
+}
+
+.intro_menu h3 {
+    margin-top: 45px;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Teachers', sans-serif;
+}
+
+.intro_menu p {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 85%;
+}
+
+/* ==============================
+    Sección de productos
+   ============================== */
+
+/* Sección de Appetizers */
+.appetizers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 60px 40px;
+    background-color: #1F2223;
+    color: white;
+}
+
+/* Sección de Plato Estrella */
+.star_dish {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 60px 40px;
+    background-color: #181A1B;
+    color: white;
+}
+
+/* Sección de Postres (Desserts) */
+.desserts {
+    display: flex;
+    justify-content: center;
+    padding: 10px 40px;
+    padding-bottom: 40px;
+    background-color: #1F2223;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .box es el contenedor de cada artículo */
+.box {
+    border: white 3px solid;
+    border-left: none;
+    width: 100%;   /* Asegura que ocupe el 100% del contenedor padre */
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0;    /* Elimina cualquier padding innecesario */
+}
+
+/* Ajuste de artículo */
+.box article {
+    position: relative;
+    width: 50%;     /* Ocupa la mitad del ancho del contenedor */
+    height: 100%;   /* Asegura que ocupe toda la altura disponible */
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen en el contenedor de artículo */
+.appetizers .box .image_container img {
+    width: 100%;    /* Ocupa el 100% del ancho */
+    height: 100%;   /* Ocupa el 100% del alto del contenedor */
+    object-fit: cover;  /* Mantiene la imagen proporcional sin distorsionarse */
+    display: block;  /* Elimina cualquier espacio debajo de la imagen */
+    margin: 0;       /* Elimina márgenes automáticos */
+    border-left: white 3px solid;
+}
+
+/* Overlay de precios */
+.box .image_container .prices_overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;    /* Ocupa todo el ancho */
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #482420;
+    font-family: 'Teachers', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 0;
+    color: white;
+    border-top: white 3px solid;
+}
+
+/* Contenedor de texto */
+.box .text_container {
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.box .text_container h1 {
+    font-size: 4.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Teachers', sans-serif;
+    font-weight: bold;
+}
+
+.appetizers .box .text_container h3 {
+    font-size: 3.2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.appetizers .box .text_container p {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Ajustes para pantallas más pequeñas (max-width: 1000px) */
+@media (max-width: 1000px) {
+    .box {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        background-color: #1F2223;
+        border: white 3px solid;
+        color: white;
+    }
+
+    .box .image_container {
+        width: 100%;
+        border-left: none;
+        border-top: 3px solid white;
+        border-right: white 3px solid;
+    }
+
+    .appetizers .box .text_container {
+        width: 100%;
+        height: 70%;
+        padding: 60px;
+    }
+
+    .appetizers .box .text_container h1 {
+        font-size: 3em;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-family: 'Teachers', sans-serif;
+        font-weight: bold;
+    }
+
+    .appetizers .box .text_container h3 {
+        font-size: 1.8em;
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+
+    .appetizers .box .text_container p {
+        font-size: 1.1em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .prices_overlay {
+        border: white 3px solid;
+    }
+}
+
+/* Plato estrella (Star Dish) */
+.star_dish .box {
+    border: 3px solid white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.star_dish .image_container {
+    width: 50%;    /* La imagen ocupa la mitad del contenedor */
+    height: 100%;  /* Asegura que ocupe todo el alto disponible */
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+.star_dish .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.star_dish .text_container {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 50%;     /* Ajusta el tamaño del texto para que ocupe la otra mitad */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+}
+
+.star_dish .text_container {
+    padding: 150px 80px;
+    padding-right: 100px;
+}
+
+.star_dish h1 {
+    font-size: 4em;
+}
+
+.star_dish h3 {
+    font-size: 3.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.star_dish p {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 2em;
+    background-color: #482420;
+    padding: 15px 30px;
+    font-family: 'Teachers', sans-serif;
+    border: white 3px solid;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .star_dish .box {
+        flex-direction: column;
+    }
+
+    .star_dish .image_container,
+    .star_dish .text_container {
+        width: 100%;
+    }
+
+    .star_dish .text_container {
+        padding: 60px 40px;
+        height: 80%;
+    }
+
+    .star_dish h1 {
+        font-size: 3em;
+    }
+
+    .star_dish h3 {
+        font-size: 2em;
+    }
+
+    .star_dish p {
+        font-size: 1.2em;
+    }
+
+    .price {
+        font-size: 1.5em;
+    }
+}
+
+/* Postres (Desserts) */
+.desserts .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid white;
+    height: 90%;
+    width: 100%;  /* Hace que ocupe el 100% del contenedor */
+    box-sizing: border-box;
+    padding: 0;  /* Elimina el padding para evitar separación con el borde */
+}
+
+.desserts .box article {
+    width: 50%;  /* Ajusta el tamaño de los artículos, ocupando la mitad del espacio */
+    height: 100%;  /* Asegura que el artículo ocupe toda la altura disponible */
+    display: flex;
+    padding: 0; /* Elimina relleno innecesario */
+    box-sizing: border-box;
+    position: relative;  /* Necesario para posicionar los elementos por encima de la imagen */
+}
+
+/* Contenedor de la imagen */
+.desserts .box article .image_container {
+    display: flex;              /* Necesario para el alineamiento */
+    justify-content: flex-end;  /* Alinea la imagen a la derecha del contenedor */
+    width: 100%;                /* La imagen ocupará todo el ancho disponible del artículo */
+    height: 100%;               /* La imagen ocupará toda la altura disponible */
+    padding: 0;                 /* Elimina cualquier relleno innecesario */
+}
+
+/* Imagen dentro del contenedor */
+.desserts .box article .image_container  {
+    width: 100%;    /* Ajusta la imagen al 100% del contenedor */
+    height: 100%;   /* Asegura que la imagen ocupe toda la altura disponible */
+    object-fit: cover;  /* Recorta la imagen para cubrir todo el espacio sin distorsionar */
+    display: block;  /* Elimina el espacio por debajo de la imagen */
+    margin: 0;       /* Elimina márgenes */
+}
+
+/* Contenedor de texto */
+.desserts .box .text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 50px;  /* Añade relleno en el contenedor de texto */
+    align-content: center;
+}
+
+.desserts .section_title {
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-family: 'Teachers', sans-serif;
+    text-align: center;
+}
+
+.desserts img {
+    width: 100%;    /* Ocupa el 100% del ancho */
+    height: 100%;   /* Ocupa el 100% del alto del contenedor */
+    object-fit: cover;  /* Mantiene la imagen proporcional sin distorsionarse */
+    display: flex;  /* Elimina cualquier espacio debajo de la imagen */
+    margin: 0;       /* Elimina márgenes automáticos */
+    max-width: 100%; 
+}
+
+.desserts h1 {
+    font-size: 4.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Teachers', sans-serif;
+    font-weight: bold;
+}
+
+.desserts h3 {
+    font-size: 3.2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.desserts p {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.desserts p:nth-of-type(2), .desserts h3:nth-of-type(2) {
+    text-align: right;
+}
+
+.desserts .price {
+    padding: 10px;
+    width: 40%;  /* Ancho de la caja de precios */
+}
+
+.desserts .price:nth-of-type(1) {
+    align-self: flex-start;
+}
+
+.desserts .price:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+@media (max-width: 1000px) {
+    .desserts .box {
+        flex-direction: column;
+    }
+
+    .desserts .box article {
+        width: 100%;
+        height: auto;
+    }
+
+    .desserts .text_container {
+        padding: 40px 20px;
+        height: auto;
+    }
+
+    .desserts h1 {
+        font-size: 3em;
+    }
+
+    .desserts h3 {
+        font-size: 2em;
+    }
+
+    .desserts p {
+        font-size: 1.2em;
+    }
+
+    .desserts .price {
+        width: 60%;
+        font-size: 1.5em;
+    }
+}
+
+/* ===============================
+   SECCIÓN DE FOOTER
+   =============================== */
+/* Footer principal */
+footer {
+    display: flex;
+    justify-content: center;
+    /* distribuye secciones */
+    align-items: flex-start;
+    /* alinea verticalmente al inicio */
+    flex-direction: column;
+    background-color: #482420;
+    color: white;
+    padding: 50px 0;
+    /* padding superior e inferior */
+    box-sizing: border-box;
+    gap: 0;
+    padding-bottom: 0;
+}
+
+footer .footer_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* espacio entre secciones */
+    align-items: center;
+    /* alinea verticalmente al inicio */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .footer_bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1em;
+    color: #D6A85E;
+    font-family: "Montserrat", sans-serif;
+    background-color: #331814;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .credit {
+    font-size: 0.9em;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+/* Secciones con ancho relativo */
+footer .info_footer,
+footer .contact {
+    flex: 0 0 25%;
+    /* 25% cada una */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+footer .info_footer {
+    padding-right: 0px;
+    padding-left: 5%;
+}
+
+footer .contact {
+    padding-left: 0px;
+    padding-right: 5%;
+}
+
+/* Info footer */
+.info_footer h3,
+.info_footer p {
+    margin: 0;
+    margin-top: 20px;
+}
+
+/* Galería */
+.galeria {
+    flex: 0 0 40%;
+    /* galería 40% */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    width: 100%;
+}
+
+.galeria img {
+    margin-top: 20px;
+    width: 90%;
+    height: auto;
+    display: block;
+}
+
+/* Textos y títulos */
+footer p {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Footer social icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a img {
+    background-color: white;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+/* Contacto */
+
+.contact h3 {
+    margin: 0;
+    margin-top: 20px;
+}
+
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1000px) {
+    footer .footer_top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .info_footer,
+    footer .contact,
+    footer .galeria-section {
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .contact {
+        padding: 0;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        /* 1 columna */
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 1.1em;
+    }
+
+    footer h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-social a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+

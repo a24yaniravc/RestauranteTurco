@@ -8,7 +8,7 @@
     <!-- Icono de la página -->
     <link rel="icon" type="image/png" href="img/mini-logo.svg">
     <!-- Enlace a la hoja de estilos CSS -->
-    <link rel="stylesheet" href="css/aboutUs.css">
+    <link rel="stylesheet" href="css/contact.css">
     <!-- Enlace a la fuente Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Enlace a la fuente SeoulNamsan CB -->
@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
     <!-- Enlace al archivo JavaScript para el encabezado -->
     <script src="jscript/header.js" defer></script>
+    <!-- Enlace al archivo JavaScript para el formulario -->
+    <script src="jscript/form.js" defer></script>
 </head>
 
 <body>
@@ -28,10 +30,10 @@
         <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="aboutUs.html" class="active">ABOUT US</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
                 <li><img src="img/logo/logo.svg" alt="TOPKAPI TAZELIK Logo" class="logo" width="200"></li>
                 <li><a href="menu.html">MENU</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -40,51 +42,42 @@
         <section class="spacer">
             <!-- Espaciador para el header fijo -->
         </section>
-        <section class="general_info">
-            <div class="image_container">
-                <img src="img/aboutUs/restaurante.png" alt="About Us Image" class="about_us_image">
-                <div class="image_overlay"></div> <!-- capa roja -->
-            </div>
-            <div class="text_content">
-                <h1>Topkapi<span class="highlight"> Tazelik</span></h1>
-                <h3>3180</h3>
-                <p>Great Google Reviews</p>
-                <h3>22</h3>
-                <p>Years of Experience</p>
-            </div>
-        </section>
-        <section class="story">
-            <article class="part1">
-                <div class="text_container">
-                    <h2>From Istanbul to Santiago</h2>
-                    <p> Born from a dream to share the flavors of Turkey, Topkapi Tazelik brings the spirit of Istanbul
-                        to
-                        Santiago de Compostela.</p>
-                    <p>Chef Aylin Demir, inspired by his grandmother's kitchen near the Topkapi
-                        Palace,
-                        combines tradition and creativity to craft dishes filled with warmth, spice, and soul. </p>
-                    <p> When he
-                        arrived
-                        in Galicia, he fell in love with the city — and decided to blend Turkish passion with Galician
-                        charm.</p>
-                </div>
-                <div class="img_container">
-                    <img src="img/aboutUs/topkapi_castle.png" alt="Topkapi Castle" class="castle_image">
-                </div>
+        <section class="main_div">
+            <article class="formulario">
+                <form method="post" class="visit_form">
+                    <div class="form_nombre">
+                        <input type="text" name="name" placeholder="Name*" required />
+                        <input type="text" name="surname" placeholder="Surname*" required />
+                    </div>
+                    <input type="email" name="email" placeholder="Contact email*" required />
+                    <input type="topic" name="topic" placeholder="Topic*" required />
+                    <input type="text" name="subject" placeholder="Message*" required class="subject" />
+                    <button type="submit" class="submit_btn">SUBMIT FORM</button>
+                </form>
+
+                <!-- Mensaje -->
+                <p id="mensaje_enviado"></p>
             </article>
-            <article class="part2">
-                <div class="img_container">
-                    <img src="img/aboutUs/santiago_cathedral.png" alt="Catedral de Santiago" class="cathedral_image">
+            <article class="info_contact">
+                <h1>WELCOME TO OUR RESTAURANT IN SANTIAGO</h1>
+                <div class="map_container">
+                    <iframe class="mapa"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23390.931290399978!2d-8.585618889160143!3d42.87566369999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2efe40193ebfb3%3A0x3756fd29b0bc5c4e!2sEstambul%20D%C3%B6ner%20Kebap%20(Santiago%20de%20Compostela)!5e0!3m2!1ses!2ses!4v1762623058320!5m2!1ses!2ses"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
-                <div class="text_container">
-                    <h2>Where Cultures Meet</h2>
-                    <p>At Topkapi Tazelik, every meal tells a story.</p>
-                    <p>From smoky Lamb Kebap to golden Baklava, each dish
-                        celebrates both heritage and freshness — tazelik. </p>
-                    <p>Here, East and West meet at the table, and every bite carries the heart of Istanbul and the
-                        warmth of Santiago.
-                    </p>
+
+                <h3>TOPKAPI TAZELIK</h3>
+                <div class="address">
+                    <ul>
+                        <li>Rúa das Estrelas, 27</li>
+                        <li>15704 Santiago de Compostela, A Coruña</li>
+                        <li>Galicia, Spain</li>
+                    </ul>
                 </div>
+                <p>+90 212 520 77 78</p>
+                <p>info@topkapitazelikrestaurant.com</p>
+            </article>
         </section>
     </main>
     <footer>

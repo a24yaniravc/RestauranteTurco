@@ -32,7 +32,7 @@ footer {
 
 /* HEADER */
 .spacer {
-    height: 180px;
+    height: 145px;
     /* altura igual a la del header */
     background-color: #482420;
     transition: all 0.4s ease;
@@ -245,7 +245,7 @@ header.scrolled .logo {
 }
 
 /* Media query para pantallas pequeñas */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
     .general_info {
         flex-direction: column;
         padding: 20px;
@@ -331,7 +331,7 @@ header.scrolled .logo {
 }
 
 /* Media query para pantallas pequeñas */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
     .story {
         padding: 20px;
     }
@@ -512,7 +512,7 @@ footer h3 {
 
 
 /* ===== MEDIA QUERIES ===== */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
     footer .footer_top {
         flex-direction: column;
         align-items: center;
